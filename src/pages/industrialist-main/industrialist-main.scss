@@ -1,0 +1,29 @@
+page-industrialist-main {
+
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 45%;
+          font-size: 1.5em;
+          width: 100%;
+          font-weight: bold;
+          color: #14b63c;
+        }
+      
+        .card-subtitle {
+          font-size: 1.0em;
+          position: absolute;
+          top: 55%;
+          width: 100%;
+          color: rgb(10, 1, 1);
+        }
+      
+      }
+
+}

@@ -1,0 +1,97 @@
+<!--
+  Generated template for the FarmregPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Farmer Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+     
+    <ion-list style="background-color:aquamarine">
+      <form  class="farmer" [formGroup]="farmer" novalidate>
+
+        <ion-item id="ii">
+          <ion-label stacked>Name:<span style="color:red">*</span> </ion-label>
+          <ion-input type="text" [(ngModel)]="name" formControlName="name"  placeholder="eg: John" maxlength="30"></ion-input>
+        </ion-item>
+
+        <ion-item right *ngIf="!farmer.controls.name.valid && farmer.touched">
+         <span item-end> <p style="color:red"> Enter Valid Name of more than 6 chars <ion-icon name="close-circle"></ion-icon></p>
+         </span>
+        </ion-item>
+        <ion-item *ngIf="farmer.controls.name.valid">
+          <span item-end><p style="color:rgb(0, 255, 0)">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+          </span></ion-item>
+      
+        <ion-item id="ii">
+          <ion-label stacked> Mobile Number :<span style="color:red">*</span> </ion-label>
+          <ion-input type="number" formControlName="number"  [(ngModel)]="number" placeholder="99999-99999" maxlength="10"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!farmer.controls.number.valid && farmer.touched">
+          <span item-end>  <p style="color:red"> Enter Valid Number of 10 digits <ion-icon name="close-circle"></ion-icon></p>
+          </span>
+          </ion-item>
+          <ion-item *ngIf="farmer.controls.number.valid">
+            <span item-end> <p style="color:rgb(0, 255, 0)">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+          </span>
+            </ion-item>
+
+        <ion-item id="ii">
+          <ion-label stacked> Email :</ion-label>
+          <ion-input type="email" formControlName="email"   [(ngModel)]="email" placeholder="eg: john@g.com" maxlength="20"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!farmer.controls.email.valid && farmer.touched">
+          <span item-end>  <p style="color:red"> Enter Valid Email Address <ion-icon name="close-circle"></ion-icon></p>
+          </span></ion-item>
+          <ion-item *ngIf="farmer.controls.email.valid">
+            <span item-end>  <p style="color:rgb(0, 255, 0)">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+          
+          </span>  </ion-item>
+        <ion-item id="ii">
+            <ion-label stacked> Password: <span style="color:red">*</span> </ion-label>
+            <ion-input type="password" formControlName="password"  [(ngModel)]="password" placeholder="********" maxlength="8"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!farmer.controls.password.valid && farmer.touched">
+            <span item-end>  <p style="color:red"> 8 digit password is required <ion-icon name="close-circle"></ion-icon></p>
+            </span></ion-item>
+            <ion-item *ngIf="farmer.controls.password.valid">
+             <span item-end> <p style="color:rgb(0, 255, 0)">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+             </span></ion-item>
+          <ion-item id="ii">
+              <ion-label stacked> Confirm Password:<span style="color:red">*</span> </ion-label>
+              <ion-input type="password" formControlName="cpassword"  [(ngModel)]="cpassword"placeholder="********" maxlength="8"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!farmer.controls.cpassword.valid && farmer.touched">
+            <span item-end>      <p style="color:red"> 8 digit password is required <ion-icon name="close-circle"></ion-icon></p>
+          </span></ion-item>
+              <ion-item *ngIf="farmer.controls.cpassword.valid">
+             <span item-end>   <p style="color:rgb(0, 255, 0)">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+             </span></ion-item>
+            <ion-item id="ii">
+              <ion-label stacked>Address :<span style="color:red">*</span> </ion-label>
+                <ion-textarea [(ngModel)]="address"formControlName="address"  placeholder="xyz street" maxlength="40"></ion-textarea>
+
+              </ion-item>
+              <ion-item *ngIf="!farmer.controls.address.valid && farmer.touched">
+              <span item-end><p style="color:red"> Enter valid address <ion-icon name="close-circle"></ion-icon></p>
+               </span> </ion-item>
+                <ion-item *ngIf="farmer.controls.address.valid">
+                <span item-end> <p style="color:rgb(0, 255, 0)">Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+                </span></ion-item>
+            
+                
+         
+
+       </form>       
+      </ion-list>  
+    
+      <button ion-button round full color="secondary" (click)="add()" [disabled]="farmer.invalid">Sign Up</button>
+</ion-content>

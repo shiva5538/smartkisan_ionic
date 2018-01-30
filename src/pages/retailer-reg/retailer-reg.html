@@ -1,0 +1,94 @@
+<!--
+  Generated template for the RetailerRegPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Retailer Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <form [formGroup]="retRegFormData">
+    <ion-list>
+
+        <ion-item>
+          <ion-label stacked>Name:<span style="color:red">*</span></ion-label>
+          <ion-input type="text" [(ngModel)]="name" formControlName="name" maxlength="30" placeholder="eg: John"></ion-input>
+        </ion-item>
+      <ion-item *ngIf="retRegFormData.controls.name.invalid && retRegFormData.touched">
+        <span item-end> <p style="color:red">Enter valid name of more than 6 chars <ion-icon name="close-circle"></ion-icon></p>
+     </span> </ion-item>
+      <ion-item *ngIf="retRegFormData.controls.name.valid">
+        <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+     </span> </ion-item>
+      
+        <ion-item>
+          <ion-label stacked> Mobile Number : <span style="color:red">*</span></ion-label>
+          <ion-input type="text" [(ngModel)]="number" formControlName="number" maxlength="10" placeholder="eg: 99999-99999"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="retRegFormData.controls.number.invalid && retRegFormData.touched">
+          <span item-end>   <p style="color:red">Enter valid number of 10 digits <ion-icon name="close-circle"></ion-icon></p>
+        </span>  </ion-item>
+          <ion-item *ngIf="retRegFormData.controls.number.valid">
+            <span item-end>   <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+         </span> </ion-item>
+
+        <ion-item>
+          <ion-label stacked> Email :</ion-label>
+          <ion-input type="email" [(ngModel)]="email" formControlName="email" maxlength="30" placeholder="eg: john@g.com"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="retRegFormData.controls.email.invalid && retRegFormData.touched">
+          <span item-end>   <p style="color:red">Enter valid Email <ion-icon name="close-circle"></ion-icon></p>
+         </span> </ion-item>
+          <ion-item *ngIf="retRegFormData.controls.email.valid">
+            <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+         </span> </ion-item>
+
+        <ion-item>
+            <ion-label stacked> Password :</ion-label>
+            <ion-input type="password" [(ngModel)]="password" formControlName="password" maxlength="8" placeholder="******"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="retRegFormData.controls.password.invalid && retRegFormData.touched">
+            <span item-end>    <p style="color:red">Enter valid password of 8 chars <ion-icon name="close-circle"></ion-icon></p>
+           </span> </ion-item>
+            <ion-item *ngIf="retRegFormData.controls.password.valid">
+              <span item-end>   <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+           </span> </ion-item>
+
+          <ion-item>
+              <ion-label stacked> Confirm Password :</ion-label>
+              <ion-input type="password" formControlName="cpassword" [(ngModel)]="cpassword"  maxlength="8" placeholder="******"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="retRegFormData.controls.cpassword.invalid && retRegFormData.touched">
+              <span item-end>    <p style="color:red">Enter valid password of 8 chars <ion-icon name="close-circle"></ion-icon></p>
+            </span>  </ion-item>
+              <ion-item *ngIf="retRegFormData.controls.cpassword.valid">
+                <span item-end>    <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+            </span>  </ion-item>
+
+
+              <ion-item>
+                <ion-label stacked> Address :</ion-label>
+                  <ion-input type="text" formControlName="address" [(ngModel)]="address" maxlength="30" placeholder="eg: BNG"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="retRegFormData.controls.address.invalid && retRegFormData.touched">
+                  <span item-end>     <p style="color:red">Enter valid Org Address <ion-icon name="close-circle"></ion-icon></p>
+                </span>  </ion-item>
+                  <ion-item *ngIf="retRegFormData.controls.address.valid">
+                    <span item-end>    <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+                 </span> </ion-item>
+            
+      </ion-list>
+    </form>
+     
+
+    
+    <br>
+    <button ion-button round full (click)="add()" [disabled]="retRegFormData.invalid" >Sign Up</button>
+</ion-content>

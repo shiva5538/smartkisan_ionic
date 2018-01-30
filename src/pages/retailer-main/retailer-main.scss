@@ -1,0 +1,29 @@
+page-retailer-main {
+
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 15%;
+          font-size: 1.5em;
+          width: 100%;
+          font-weight: bold;
+          color: #2a332c;
+        }
+      
+        .card-subtitle {
+          font-size: 1.0em;
+          position: absolute;
+          top: 25%;
+          width: 100%;
+          color: rgb(10, 1, 1);
+        }
+      
+      }
+
+}

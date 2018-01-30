@@ -1,0 +1,54 @@
+<!--
+  Generated template for the RetailerLoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Retailer Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+  <ion-card>
+      <ion-card-header>
+          Login <ion-icon name="contact"></ion-icon>
+      </ion-card-header>
+      <ion-card-content>
+          <form [formGroup]="retailer">
+          <ion-list no-line>
+              <ion-item>
+                  <ion-input type="text" [(ngModel)]="number"  maxlength="10" formControlName="number" placeholder="Mobile number"></ion-input>
+              </ion-item>
+              <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="retailer.controls.number.invalid && retailer.touched">
+                <span item-end>   <p style="color:red;font-weight:bold">Enter Registered Number <ion-icon name="close-circle"></ion-icon></p>
+                </span> 
+                </ion-item>
+                <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="retailer.controls.number.valid">
+                  <span item-end> <p style="color:rgb(0, 255, 0);font-weight:bold"> Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+                      </span>
+                </ion-item>
+              <ion-item>
+                      <ion-input type="password" maxlength="8" [(ngModel)]="pass" formControlName="pass" placeholder="Password"></ion-input>
+              </ion-item>
+              <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="retailer.controls.pass.invalid && retailer.touched">
+                <span item-end> <p style="color:red;font-weight:bold">Enter valid password <ion-icon name="close-circle"></ion-icon></p>
+                </span>
+                </ion-item>
+                <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="retailer.controls.pass.valid">
+                  <span item-end>   <p style="color:rgb(0, 255, 0);font-weight:bold"> Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+                      </span>
+                </ion-item>
+
+              <button ion-button block outline color="light" (click)="RetMain()" [disabled]="retailer.invalid">Login</button>
+               
+          </ion-list>
+        </form>
+      </ion-card-content>
+  </ion-card>
+  <button class="bottom" ion-button clear (click)="RetailerReg()" full color="light">Don't have an account? Sign up</button>
+</ion-content>

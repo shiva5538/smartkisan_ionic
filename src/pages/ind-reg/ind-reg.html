@@ -1,0 +1,104 @@
+<!--
+  Generated template for the IndRegPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Industrialist Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+     
+      <form [formGroup]="industry">
+        <ion-list>
+    
+            <ion-item>
+              <ion-label stacked>Name:<span style="color:red">*</span></ion-label>
+              <ion-input type="text" [(ngModel)]="name" formControlName="name" maxlength="30" placeholder="eg: John"></ion-input>
+            </ion-item>
+          <ion-item *ngIf="industry.controls.name.invalid && industry.touched">
+          <span item-end>  <p style="color:red">Enter valid name of more than 6 chars <ion-icon name="close-circle"></ion-icon></p>
+          </span></ion-item>
+          <ion-item *ngIf="industry.controls.name.valid">
+            <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+          </span></ion-item>
+          
+            <ion-item>
+              <ion-label stacked> Mobile Number : <span style="color:red">*</span></ion-label>
+              <ion-input type="text" [(ngModel)]="number" formControlName="number" maxlength="10" placeholder="eg: 99999-99999"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="industry.controls.number.invalid && industry.touched">
+              <span item-end>  <p style="color:red">Enter valid number of 10 digits <ion-icon name="close-circle"></ion-icon></p>
+             </span> </ion-item>
+              <ion-item *ngIf="industry.controls.number.valid">
+                <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+             </span> </ion-item>
+    
+            <ion-item>
+              <ion-label stacked> Email (Optional) :</ion-label>
+              <ion-input type="email" [(ngModel)]="email" formControlName="email" maxlength="30" placeholder="eg: john@g.com"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="industry.controls.email.invalid && industry.touched">
+              <span item-end>   <p style="color:red">Enter valid Email <ion-icon name="close-circle"></ion-icon></p>
+             </span> </ion-item>
+              <ion-item *ngIf="industry.controls.email.valid">
+                <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+             </span> </ion-item>
+    
+            <ion-item>
+                <ion-label stacked> Password :</ion-label>
+                <ion-input type="password" [(ngModel)]="password" formControlName="password" maxlength="8" placeholder="******"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="industry.controls.password.invalid && industry.touched">
+                <span item-end>  <p style="color:red">Enter valid password of 8 chars <ion-icon name="close-circle"></ion-icon></p>
+               </span> </ion-item>
+                <ion-item *ngIf="industry.controls.password.valid">
+                  <span item-end>   <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+               </span> </ion-item>
+    
+              <ion-item>
+                  <ion-label stacked> Confirm Password :</ion-label>
+                  <ion-input type="password" [(ngModel)]="cpassword" formControlName="cpassword"  maxlength="8" placeholder="******"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="industry.controls.cpassword.invalid && industry.touched">
+                  <span item-end>   <p style="color:red">Enter valid password of 8 chars <ion-icon name="close-circle"></ion-icon></p>
+                 </span> </ion-item>
+                  <ion-item *ngIf="industry.controls.cpassword.valid">
+                    <span item-end>   <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+                 </span> </ion-item>
+    
+                <ion-item>
+                  <ion-label stacked>Oragnization Name :</ion-label>
+                    <ion-input type="text" formControlName="orgname" [(ngModel)]="orgname" maxlength="30" placeholder="eg: XYZ"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="industry.controls.orgname.invalid && industry.touched">
+                    <span item-end>   <p style="color:red">Enter valid Org Name <ion-icon name="close-circle"></ion-icon></p>
+                   </span> </ion-item>
+                    <ion-item *ngIf="industry.controls.orgname.valid">
+                      <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+                    </span></ion-item>
+    
+                  <ion-item>
+                    <ion-label stacked>Oragnization Address :</ion-label>
+                      <ion-input type="text" formControlName="orgadd" [(ngModel)]="orgadd" maxlength="30" placeholder="eg: BNG"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="industry.controls.orgadd.invalid && industry.touched">
+                      <span item-end>   <p style="color:red">Enter valid Org Address <ion-icon name="close-circle"></ion-icon></p>
+                     </span> </ion-item>
+                      <ion-item *ngIf="industry.controls.orgadd.valid">
+                        <span item-end>  <p style="color:green"> Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+                      </span></ion-item>
+                
+          </ion-list>
+        </form>     
+        
+        <button ion-button round full (click)="add()" [disabled]="industry.invalid">Sign Up</button>
+    
+</ion-content>
+

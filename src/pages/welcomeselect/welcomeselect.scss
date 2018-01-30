@@ -1,0 +1,37 @@
+page-welcomeselect {
+    .background{
+        background: url("../assets/imgs/2.jpg")
+    }
+    
+    .scroll-content {
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    ion-card.card {
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.288);
+        border-radius: 5px;
+    }
+  
+    .item {
+        margin-bottom: 10px;
+        background: rgba(0, 0, 0, 0.603);
+        border: medium none;
+
+       
+      
+    }
+    .btn {
+        background: rgba(17, 177, 28, 0.753);
+    }
+
+    .icon {
+        padding-right: 10px;
+    }
+    
+
+}
+

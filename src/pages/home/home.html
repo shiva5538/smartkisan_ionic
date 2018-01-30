@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h1>Smart Kisan</h1>      
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-home">
+ 
+
+<ion-slides pager (ionSlideDidChange)="slideChanged()"  >
+  <ion-slide *ngFor="let slide of slider">
+    
+    <img ion-img class="imggo" [src]="slide.image" alt="Loading..." >
+    <h4 class="slide.title" [innerHTML]="slide.title"></h4>
+    <p [innerHTML]="slide.Content"></p>
+    <button ion-button full color="secondary" (click)="next()">{{ SkipMsg }}</button>
+  </ion-slide>
+
+   <ion-slide>
+     <!-- <button ion-button full color="secondary">{{ SkipMsg }}</button> -->
+     <h3> Join Our Community...</h3> 
+     <br>
+     <ion-img class="imggo" src="assets/imgs/1.jpg" alt="Loading..."></ion-img>
+      
+      <br>
+      <button ion-button large (click)="loadWelcomeSelect()" color="green" round>
+          <ion-icon name="arrow-forward"></ion-icon>
+        
+       
+      </button>
+    
+     
+    </ion-slide>
+</ion-slides>
+</ion-content>

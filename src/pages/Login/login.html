@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Farmer Login   
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="background">
+        <ion-card >
+            <ion-card-header>
+                Login <ion-icon name="contact"></ion-icon>
+            </ion-card-header>
+            <ion-card-content>
+                <form [formGroup]="farmerLogData">
+                <ion-list >
+                    <ion-item >                  
+                      <ion-input input="number" [(ngModel)]="number"  maxlength="10" formControlName="number" placeholder="Mobile number"></ion-input>
+                    </ion-item>
+                  
+                  
+                    <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="farmerLogData.controls.number.invalid && farmerLogData.touched">
+                        <span item-end>     <p style="color:red;font-weight:bold">Enter Registered Number <ion-icon name="close-circle"></ion-icon></p></span>
+                    </ion-item>
+                    <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="farmerLogData.controls.number.valid">
+                        <span item-end>       <p style="color:rgb(0, 255, 0);font-weight:bold"> Valid<ion-icon name="checkmark-circle"></ion-icon></p></span>
+    
+                    </ion-item>
+              <hr>
+                    <ion-item >
+                            <ion-input type="password" [(ngModel)]="pass" formControlName="pass" maxlength="8" placeholder="Password"></ion-input>
+                    </ion-item>
+             
+                    <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="farmerLogData.controls.pass.invalid && farmerLogData.touched">
+                         <span item-end>   <p style="color:rgb(255, 0, 0);font-weight:bold">Enter valid password <ion-icon name="close-circle"></ion-icon></p></span>
+                        </ion-item>
+                        <ion-item style="background-color: rgba(0, 0, 0, 0.075)" *ngIf="farmerLogData.controls.pass.valid">
+                            <span item-end>     <p style="color:rgb(0, 255, 0);font-weight:bold"> Valid<ion-icon name="checkmark-circle"></ion-icon></p></span>
+        
+                        </ion-item>
+                    </ion-list>
+                   <br>
+                   <button ion-button block outline color="light" (click)="farmerMain()" [disabled]="farmerLogData.invalid">Login</button>
+                     
+                
+            </form>
+            </ion-card-content>
+        </ion-card>
+        <button class="bottom" ion-button clear (click)="farmReg()" full color="light">Don't have an account? Sign up</button>
+    </ion-content>

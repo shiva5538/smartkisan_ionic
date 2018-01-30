@@ -1,0 +1,147 @@
+<!--
+  Generated template for the AddCropPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add My Product</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content>
+  <ion-list>
+  <form class="farmer" [formGroup]="farmer" novalidate>
+    <ion-item>
+        <ion-label stacked>Name:<span style="color:red">*</span> </ion-label>
+        <ion-input type="text" [(ngModel)]="name" formControlName="name"  placeholder="eg: John" maxlength="30"></ion-input>
+      </ion-item>
+      <ion-item right *ngIf="!farmer.controls.name.valid && farmer.touched">
+          <p style="color:red"> Enter Valid Name of more than 6 chars <ion-icon name="close-circle"></ion-icon></p>
+        </ion-item>
+        <ion-item *ngIf="farmer.controls.name.valid">
+          <p style="color:green">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+        </ion-item>
+      <ion-item>
+          <ion-label stacked> Mobile Number :<span style="color:red">*</span> </ion-label>
+          <ion-input type="number" formControlName="number"  [(ngModel)]="number" placeholder="99999-99999" maxlength="10"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!farmer.controls.number.valid && farmer.touched">
+            <p style="color:red"> Enter Valid Number of 10 digits <ion-icon name="close-circle"></ion-icon></p>
+          </ion-item>
+          <ion-item *ngIf="farmer.controls.number.valid">
+            <p style="color:green">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+          </ion-item>
+        <ion-item>
+            <ion-label stacked>Address :<span style="color:red">*</span> </ion-label>
+              <ion-textarea [(ngModel)]="address"formControlName="address"  placeholder="xyz street" maxlength="40"></ion-textarea>
+
+            </ion-item>
+            <ion-item *ngIf="!farmer.controls.address.valid && farmer.touched">
+                <p style="color:red"> Enter valid address <ion-icon name="close-circle"></ion-icon></p>
+              </ion-item>
+              <ion-item *ngIf="farmer.controls.address.valid">
+                <p style="color:green">Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+              </ion-item>
+             <ion-item>
+               <ion-label>Select Crop</ion-label>
+                     <ion-select [(ngModel)]="crop" formControlName="crop"  multiple="false" >
+      
+                          <ion-option value="Ajwan">Ajwan</ion-option>
+                          <ion-option value="Alasande Gram">Mango</ion-option>
+                          <ion-option value="Alsandikai">Alsandikai</ion-option>
+                          <ion-option value="Amaranthus">Amaranthus</ion-option>
+                          <ion-option value="Ambada Seed">Ambada Seed</ion-option>
+                          <ion-option value="Amla(Nelli kai)">Amla</ion-option>
+                          <ion-option value="Amphophalus">Amphophalus</ion-option>
+                          <ion-option value="Antawala">Antawala</ion-option>
+                          <ion-option value="Anthorium">Anthorium</ion-option>
+                          <ion-option value="Apple">Apple</ion-option>
+                          <ion-option value="Apricot(Jardalu Khumani)">Apricot</ion-option>
+                          <ion-option value="Arecanut(Betelnut/ Supari)">Arecanut</ion-option>
+                          <ion-option value="Arhar(Tur/Red Gram)">Arhar(Red Gram)</ion-option>
+                          <ion-option value="Ashgourd">Ashgourd</ion-option>
+                          <ion-option value="Avare Dal">Avare Dal</ion-option>
+                        
+                       </ion-select>
+             </ion-item>
+             <ion-item *ngIf="!farmer.controls.crop.valid && farmer.touched">
+                <p style="color:red">Select Any Crop <ion-icon name="close-circle"></ion-icon></p>
+              </ion-item>
+              <ion-item *ngIf="farmer.controls.crop.valid">
+                <p style="color:green">Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+              </ion-item>
+    
+             <ion-item>
+               <ion-label>Select Variety</ion-label>    
+                <ion-select [(ngModel)]="variety" formControlName="variety"  multiple="false" >
+      
+                   <ion-option value="Ajwan">Ajwan</ion-option>
+                   <ion-option value="andaman">Andaman tall</ion-option>
+                   <ion-option value="katchal">Katchal tall</ion-option>
+                   <ion-option value="east">East Coast</ion-option>
+
+                 </ion-select>
+             </ion-item>
+             <ion-item *ngIf="!farmer.controls.variety.valid && farmer.touched">
+                <p style="color:red">Select Any Variety <ion-icon name="close-circle"></ion-icon></p>
+              </ion-item>
+              <ion-item *ngIf="farmer.controls.variety.valid">
+                <p style="color:green">Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+              </ion-item>
+
+     
+              <ion-item>
+                <ion-label>Select Cultivation Type</ion-label>
+                <ion-select [(ngModel)]="type" formControlName="type"  multiple="false" >
+                  
+                  <ion-option value="Regular">Regular</ion-option>
+                  <ion-option value="Organic">Organic</ion-option>
+                  <ion-option value="Natural">Natural</ion-option>
+                
+                </ion-select>
+              </ion-item>
+              <ion-item *ngIf="!farmer.controls.type.valid && farmer.touched">
+                  <p style="color:red">Select Cultivation Type <ion-icon name="close-circle"></ion-icon></p>
+                </ion-item>
+                <ion-item *ngIf="farmer.controls.type.valid">
+                  <p style="color:green">Valid<ion-icon name="checkmark-circle"></ion-icon></p>
+                </ion-item>
+  
+          <ion-item>
+              <ion-label floating> Quantity(qunitals) :</ion-label>
+              <ion-input type="text" [(ngModel)]="quantity" formControlName="quantity"></ion-input>
+            </ion-item>
+            <ion-item right *ngIf="!farmer.controls.quantity.valid && farmer.touched">
+                <p style="color:red"> Enter Valid quantity <ion-icon name="close-circle"></ion-icon></p>
+              </ion-item>
+              <ion-item *ngIf="farmer.controls.quantity.valid">
+                <p style="color:green">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+              </ion-item>
+
+            <ion-item>
+                <ion-label floating> Expected Price per Quintal :</ion-label>
+                <ion-input type="number" formControlName="price" [(ngModel)]="price" ></ion-input>
+              </ion-item>
+              <ion-item right *ngIf="!farmer.controls.price.valid && farmer.touched">
+                  <p style="color:red"> Enter Valid Price <ion-icon name="close-circle"></ion-icon></p>
+                </ion-item>
+                <ion-item *ngIf="farmer.controls.price.valid">
+                  <p style="color:green">Valid <ion-icon name="checkmark-circle"></ion-icon></p>
+                </ion-item>
+
+            </form>
+          </ion-list>
+
+              <button ion-button full (click)="addcrop()" [disabled]="farmer.invalid">REGISTER CROP</button>
+
+
+ 
+
+
+</ion-content>
